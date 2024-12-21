@@ -30,13 +30,17 @@ namespace DPanel
         const string SECRET_KEY = "WgSQbsnSIhhH8QhfR7uQ8AEJRsq1YMPg";//这是卡尔斯厄的apikey，如需编译请替换
 
 
-        private void AutoStartButton_Checked(object sender, RoutedEventArgs e)
+        public void ProfileApply()
         {
-            ProfileData.Settings.AutoStart = AutoStartButton.IsChecked;
             ProfileJson = JsonConvert.SerializeObject(ProfileData);
             File.WriteAllText(ProfilePath, ProfileJson);
 
 
+        }
+        private void AutoStartButton_Checked(object sender, RoutedEventArgs e)
+        {
+            ProfileData.Settings.AutoStart = AutoStartButton.IsChecked;
+            ProfileApply();
             //应用更改
         }
 
@@ -82,15 +86,24 @@ namespace DPanel
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            ProfilesLoad();
+            this.Visibility = Visibility.Hidden;
 
-            Task task = new Task(UpdateCheck);
+            Task task = new Task(() => {
+                ProfilesLoad();
+                UpdateCheck();
+                MarkdownUpdate();
+            });
             task.RunSynchronously();
 
-            MarkdownUpdate();
+
 
             comTime comTime1 = new comTime(this);
             comTime1.Show();
+            comTime1.Top = ProfileData.Components.comTime.Top;
+            comTime1.Left = ProfileData.Components.comTime.Left ;
+
+            comAI comAI1 = new comAI(this);
+            comAI1.Show();
 
         }
         private void UpdateCheck()
@@ -156,16 +169,17 @@ namespace DPanel
             return result.access_token.ToString();
         }
 
-        public string IntelligentAnswer()
+        public string IntelligentAnswer( dynamic body)
         {
             var client = new RestClient($"https://aip.baidubce.com/rpc/2.0/ai_custom/v1/wenxinworkshop/chat/ernie-lite-8k?access_token={GetAccessToken()}");
             client.Timeout = -1;
             var request = new RestRequest(Method.POST);
             request.AddHeader("Content-Type", "application/json");
-            var body = @"{""messages"":[{""role"":""user"",""content"":""go""},{""role"":""assistant"",""content"":""春风十里，温暖如你""},{""role"":""user"",""content"":""go""},{""role"":""assistant"",""content"":""晨光熹微，笑靥如花""},{""role"":""user"",""content"":""go""},{""role"":""assistant"",""content"":""清风徐来，心旷神怡""},{""role"":""user"",""content"":""go""},{""role"":""assistant"",""content"":""晨光熹微，笑迎今朝""},{""role"":""user"",""content"":""8个字""},{""role"":""assistant"",""content"":""未来已来，加油努力""},{""role"":""user"",""content"":""go""},{""role"":""assistant"",""content"":""追风逐梦，奋发向前""},{""role"":""user"",""content"":""go""},{""role"":""assistant"",""content"":""踏浪而行，一路顺风""},{""role"":""user"",""content"":""go""}],""temperature"":0.95,""top_p"":1.0,""penalty_score"":2,""system"":""当用户发送“go”时，回复8字问候语，禁止发送除此8字外内容，不要重复""}";
             request.AddParameter("application/json", body, ParameterType.RequestBody);
             IRestResponse response = client.Execute(request);
-            return response.Content;
+            dynamic data = JsonConvert.DeserializeObject(response.Content);
+
+            return data.result;
         }
 
         public dynamic WeatherGet()

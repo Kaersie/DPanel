@@ -35,3 +35,81 @@ D:\DPanel\DPanel\obj\Debug\DPanel.exe
 D:\DPanel\DPanel\obj\Debug\DPanel.pdb
 D:\DPanel\DPanel\bin\Debug\RestSharp.dll
 D:\DPanel\DPanel\bin\Debug\RestSharp.xml
+C:\Users\Hisense\Desktop\dpanel-master\bin\Debug\DPanel.exe.config
+C:\Users\Hisense\Desktop\dpanel-master\bin\Debug\DPanel.exe
+C:\Users\Hisense\Desktop\dpanel-master\bin\Debug\DPanel.pdb
+C:\Users\Hisense\Desktop\dpanel-master\bin\Debug\ICSharpCode.AvalonEdit.dll
+C:\Users\Hisense\Desktop\dpanel-master\bin\Debug\MaterialDesignColors.dll
+C:\Users\Hisense\Desktop\dpanel-master\bin\Debug\MaterialDesignThemes.Wpf.dll
+C:\Users\Hisense\Desktop\dpanel-master\bin\Debug\MdXaml.dll
+C:\Users\Hisense\Desktop\dpanel-master\bin\Debug\MdXaml.Plugins.dll
+C:\Users\Hisense\Desktop\dpanel-master\bin\Debug\Microsoft.Xaml.Behaviors.dll
+C:\Users\Hisense\Desktop\dpanel-master\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Hisense\Desktop\dpanel-master\bin\Debug\RestSharp.dll
+C:\Users\Hisense\Desktop\dpanel-master\bin\Debug\ICSharpCode.AvalonEdit.xml
+C:\Users\Hisense\Desktop\dpanel-master\bin\Debug\MaterialDesignColors.pdb
+C:\Users\Hisense\Desktop\dpanel-master\bin\Debug\MaterialDesignThemes.Wpf.pdb
+C:\Users\Hisense\Desktop\dpanel-master\bin\Debug\MaterialDesignThemes.Wpf.xml
+C:\Users\Hisense\Desktop\dpanel-master\bin\Debug\Microsoft.Xaml.Behaviors.pdb
+C:\Users\Hisense\Desktop\dpanel-master\bin\Debug\Microsoft.Xaml.Behaviors.xml
+C:\Users\Hisense\Desktop\dpanel-master\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Hisense\Desktop\dpanel-master\bin\Debug\RestSharp.xml
+C:\Users\Hisense\Desktop\dpanel-master\obj\Debug\DPanel.csproj.AssemblyReference.cache
+C:\Users\Hisense\Desktop\dpanel-master\obj\Debug\MainWindow.baml
+C:\Users\Hisense\Desktop\dpanel-master\obj\Debug\comTime.g.cs
+C:\Users\Hisense\Desktop\dpanel-master\obj\Debug\ErrorWindow.g.cs
+C:\Users\Hisense\Desktop\dpanel-master\obj\Debug\MainWindow.g.cs
+C:\Users\Hisense\Desktop\dpanel-master\obj\Debug\App.g.cs
+C:\Users\Hisense\Desktop\dpanel-master\obj\Debug\DPanel_MarkupCompile.cache
+C:\Users\Hisense\Desktop\dpanel-master\obj\Debug\DPanel_MarkupCompile.lref
+C:\Users\Hisense\Desktop\dpanel-master\obj\Debug\App.baml
+C:\Users\Hisense\Desktop\dpanel-master\obj\Debug\comTime.baml
+C:\Users\Hisense\Desktop\dpanel-master\obj\Debug\ErrorWindow.baml
+C:\Users\Hisense\Desktop\dpanel-master\obj\Debug\DPanel.g.resources
+C:\Users\Hisense\Desktop\dpanel-master\obj\Debug\DPanel.Properties.Resources.resources
+C:\Users\Hisense\Desktop\dpanel-master\obj\Debug\DPanel.csproj.GenerateResource.cache
+C:\Users\Hisense\Desktop\dpanel-master\obj\Debug\DPanel.csproj.CoreCompileInputs.cache
+C:\Users\Hisense\Desktop\dpanel-master\obj\Debug\DPanel.csproj.CopyComplete
+C:\Users\Hisense\Desktop\dpanel-master\obj\Debug\DPanel.exe
+C:\Users\Hisense\Desktop\dpanel-master\obj\Debug\DPanel.pdb
+C:\Users\Hisense\Desktop\Backup Files\dpanel-master\bin\Debug\DPanel.exe.config
+C:\Users\Hisense\Desktop\Backup Files\dpanel-master\bin\Debug\DPanel.exe
+C:\Users\Hisense\Desktop\Backup Files\dpanel-master\bin\Debug\DPanel.pdb
+C:\Users\Hisense\Desktop\Backup Files\dpanel-master\bin\Debug\ICSharpCode.AvalonEdit.dll
+C:\Users\Hisense\Desktop\Backup Files\dpanel-master\bin\Debug\MaterialDesignColors.dll
+C:\Users\Hisense\Desktop\Backup Files\dpanel-master\bin\Debug\MaterialDesignThemes.Wpf.dll
+C:\Users\Hisense\Desktop\Backup Files\dpanel-master\bin\Debug\MdXaml.dll
+C:\Users\Hisense\Desktop\Backup Files\dpanel-master\bin\Debug\MdXaml.Plugins.dll
+C:\Users\Hisense\Desktop\Backup Files\dpanel-master\bin\Debug\Microsoft.Xaml.Behaviors.dll
+C:\Users\Hisense\Desktop\Backup Files\dpanel-master\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Hisense\Desktop\Backup Files\dpanel-master\bin\Debug\RestSharp.dll
+C:\Users\Hisense\Desktop\Backup Files\dpanel-master\bin\Debug\ICSharpCode.AvalonEdit.xml
+C:\Users\Hisense\Desktop\Backup Files\dpanel-master\bin\Debug\MaterialDesignColors.pdb
+C:\Users\Hisense\Desktop\Backup Files\dpanel-master\bin\Debug\MaterialDesignThemes.Wpf.pdb
+C:\Users\Hisense\Desktop\Backup Files\dpanel-master\bin\Debug\MaterialDesignThemes.Wpf.xml
+C:\Users\Hisense\Desktop\Backup Files\dpanel-master\bin\Debug\Microsoft.Xaml.Behaviors.pdb
+C:\Users\Hisense\Desktop\Backup Files\dpanel-master\bin\Debug\Microsoft.Xaml.Behaviors.xml
+C:\Users\Hisense\Desktop\Backup Files\dpanel-master\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Hisense\Desktop\Backup Files\dpanel-master\bin\Debug\RestSharp.xml
+C:\Users\Hisense\Desktop\Backup Files\dpanel-master\obj\Debug\DPanel.csproj.AssemblyReference.cache
+C:\Users\Hisense\Desktop\Backup Files\dpanel-master\obj\Debug\MainWindow.baml
+C:\Users\Hisense\Desktop\Backup Files\dpanel-master\obj\Debug\comAI.g.cs
+C:\Users\Hisense\Desktop\Backup Files\dpanel-master\obj\Debug\comTime.g.cs
+C:\Users\Hisense\Desktop\Backup Files\dpanel-master\obj\Debug\ErrorWindow.g.cs
+C:\Users\Hisense\Desktop\Backup Files\dpanel-master\obj\Debug\MainWindow.g.cs
+C:\Users\Hisense\Desktop\Backup Files\dpanel-master\obj\Debug\App.g.cs
+C:\Users\Hisense\Desktop\Backup Files\dpanel-master\obj\Debug\DPanel_MarkupCompile.cache
+C:\Users\Hisense\Desktop\Backup Files\dpanel-master\obj\Debug\DPanel_MarkupCompile.lref
+C:\Users\Hisense\Desktop\Backup Files\dpanel-master\obj\Debug\App.baml
+C:\Users\Hisense\Desktop\Backup Files\dpanel-master\obj\Debug\comAI.baml
+C:\Users\Hisense\Desktop\Backup Files\dpanel-master\obj\Debug\comTime.baml
+C:\Users\Hisense\Desktop\Backup Files\dpanel-master\obj\Debug\ErrorWindow.baml
+C:\Users\Hisense\Desktop\Backup Files\dpanel-master\obj\Debug\DPanel.g.resources
+C:\Users\Hisense\Desktop\Backup Files\dpanel-master\obj\Debug\DPanel.Properties.Resources.resources
+C:\Users\Hisense\Desktop\Backup Files\dpanel-master\obj\Debug\DPanel.csproj.GenerateResource.cache
+C:\Users\Hisense\Desktop\Backup Files\dpanel-master\obj\Debug\DPanel.csproj.CoreCompileInputs.cache
+C:\Users\Hisense\Desktop\Backup Files\dpanel-master\obj\Debug\DPanel.csproj.CopyComplete
+C:\Users\Hisense\Desktop\Backup Files\dpanel-master\obj\Debug\DPanel.exe
+C:\Users\Hisense\Desktop\Backup Files\dpanel-master\obj\Debug\DPanel.pdb
+C:\Users\Hisense\Desktop\Backup Files\dpanel-master\obj\Debug\comBoard.g.cs
+C:\Users\Hisense\Desktop\Backup Files\dpanel-master\obj\Debug\comBoard.baml

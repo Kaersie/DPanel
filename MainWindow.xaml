@@ -216,7 +216,7 @@
                                     <TextBlock Style="{DynamicResource MaterialDesignSubtitle1TextBlock}" Margin="0,0,0,10">感谢以下贡献者</TextBlock>
                                     <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
                                         <materialDesign:Chip Content="卡尔斯厄" Icon="卡" />
-                                        <materialDesign:Chip Content="科学の灯塔" Icon="科" />
+                                        <materialDesign:Chip Content="科学の小猫娘" Icon="科" />
                                     </StackPanel>
 
                                     <TextBlock Style="{DynamicResource MaterialDesignSubtitle1TextBlock}" Margin="0,10">感谢以下项目</TextBlock>

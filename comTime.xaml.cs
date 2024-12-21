@@ -50,7 +50,7 @@ namespace DPanel
             DispatcherTimer BottomTimer = new DispatcherTimer();
             BottomTimer.Interval = new TimeSpan(1);//1s
             BottomTimer.Tick += new EventHandler(sets);
-            BottomTimer.Start();
+         //   BottomTimer.Start();
 
 
 
@@ -70,9 +70,8 @@ namespace DPanel
             try
             {
 
-               string a = Main.IntelligentAnswer();
-               dynamic data = JsonConvert.DeserializeObject(a);
-                IntelligentText.Text = data.result;
+               string a = Main.IntelligentAnswer(@"{""messages"":[{""role"":""user"",""content"":""go""},{""role"":""assistant"",""content"":""春风十里，温暖如你""},{""role"":""user"",""content"":""go""},{""role"":""assistant"",""content"":""晨光熹微，笑靥如花""},{""role"":""user"",""content"":""go""}],""temperature"":0.95,""top_p"":1.0,""penalty_score"":2,""system"":""当用户发送“go”时，回复8字问候语，禁止发送除此8字外内容，不要重复""}");
+                IntelligentText.Text = a;
             }
             catch
             {
@@ -167,6 +166,12 @@ namespace DPanel
             }
         }
 
+        private void Window_Closed(object sender, EventArgs e)
+        {
+            Main.ProfileData.Components.comTime.Top=this.Top;
+            Main.ProfileData.Components.comTime.Left = this.Left;
+            Main.ProfileApply();
+        }
     }
 
 }

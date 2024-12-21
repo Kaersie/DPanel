@@ -85,6 +85,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="comAI.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="comBoard.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="comTime.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -100,6 +108,12 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="comAI.xaml.cs">
+      <DependentUpon>comAI.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="comBoard.xaml.cs">
+      <DependentUpon>comBoard.xaml</DependentUpon>
     </Compile>
     <Compile Include="comTime.xaml.cs">
       <DependentUpon>comTime.xaml</DependentUpon>
