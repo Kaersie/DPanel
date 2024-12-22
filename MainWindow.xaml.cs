@@ -10,6 +10,8 @@ using System.IO.Compression;
 using RestSharp;
 using System.Runtime.InteropServices;
 using System.Windows.Interop;
+using MaterialDesignThemes.Wpf;
+using System.Windows.Controls;
 
 namespace DPanel
 {
@@ -34,8 +36,6 @@ namespace DPanel
         {
             ProfileJson = JsonConvert.SerializeObject(ProfileData);
             File.WriteAllText(ProfilePath, ProfileJson);
-
-
         }
         private void AutoStartButton_Checked(object sender, RoutedEventArgs e)
         {
@@ -44,7 +44,7 @@ namespace DPanel
             //应用更改
         }
 
-        private void UpdateButton_Click(object sender, RoutedEventArgs e)
+    private async void UpdateButton_Click(object sender, RoutedEventArgs e)
         {
             if (UpdateButton.Content.ToString() == "检测更新")
             {
@@ -53,34 +53,14 @@ namespace DPanel
             }
             else
             {
-                Task task = new Task(UpdateFiles);
-                task.RunSynchronously();
+                UpdateFiles();
             }
         }
 
+      
         private void UpdateFiles()
         {
-            WebClient client = new WebClient();
-            client.Credentials = CredentialCache.DefaultCredentials;
-            client.Encoding = Encoding.UTF8;
-            client.DownloadFile(@"https://gitee.com/kaersie/dpanel-update/raw/master/beta/file.zip", "./file.zip");
-            try
-            {
-                Directory.Delete(@"./UpdateFile", true);
-            }
-            catch
-            {
-            }
-            ZipFile.ExtractToDirectory("./file.zip", "./UpdateFile");
-            Process.Start("Update.exe");
-            ConfigData.Version = UpdateData.Version;
-            CurrentVersion = UpdateData.Version;
-            ConfigData.Name = UpdateData.Name;
-            CurrentName = UpdateData.Name;
-            ConfigJson = JsonConvert.SerializeObject(ConfigData);
-            File.WriteAllText("./Config.json", ConfigJson);
-            Environment.Exit(0);
-
+            Dialog.ShowDialog(Dialog.DialogContent);
 
         }
 
@@ -88,13 +68,9 @@ namespace DPanel
         {
             this.Visibility = Visibility.Hidden;
 
-            Task task = new Task(() => {
                 ProfilesLoad();
                 UpdateCheck();
-                MarkdownUpdate();
-            });
-            task.RunSynchronously();
-
+              
 
 
             comTime comTime1 = new comTime(this);
@@ -106,23 +82,26 @@ namespace DPanel
             comAI1.Show();
 
         }
-        private void UpdateCheck()
+        private async void UpdateCheck()
         {
-            WebClient client = new WebClient();
-            client.Credentials = CredentialCache.DefaultCredentials;
-            client.Encoding = Encoding.UTF8;
-            client.DownloadFile(@"https://gitee.com/kaersie/dpanel-update/raw/master/beta/update.json", "./update.json");
-            client.DownloadFile(@"https://gitee.com/kaersie/dpanel-update/raw/master/beta/intro.md", "./intro.md");
+            await Task.Run(() =>
+            {
+                WebClient client = new WebClient();
+                client.Credentials = CredentialCache.DefaultCredentials;
+                client.Encoding = Encoding.UTF8;
+                client.DownloadFile(@"https://gitee.com/kaersie/dpanel-update/raw/master/beta/update.json", "./update.json");
+                client.DownloadFile(@"https://gitee.com/kaersie/dpanel-update/raw/master/beta/intro.md", "./intro.md");
+            });
             UpdateJson = File.ReadAllText("./update.json");
             UpdateData = JsonConvert.DeserializeObject(UpdateJson);
             VersionLabel.Text = "当前版本：" + CurrentVersion + " " + CurrentName + "   最新版本：" + UpdateData.Version + " " + UpdateData.Name;
             if (int.Parse(UpdateData.Version.Value) > int.Parse(CurrentVersion))
             {
-                UpdateButton.Content = "重启更新";
+                UpdateButton.Content = "现在更新";
                 UpdateLabel.Text = "检测到新版本";
                 UpdateIcon.Kind = MaterialDesignThemes.Wpf.PackIconKind.FileArrowUpDown;
             }
-
+            MarkdownUpdate();
 
 
         }
@@ -139,6 +118,52 @@ namespace DPanel
             SettingApply(ProfileData.Settings);
 
 
+        }
+
+        private void ShowButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (this.Visibility==Visibility.Hidden) {
+               this.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                this.Visibility = Visibility.Hidden;
+            }
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://gitee.com/kaersie/dpanel-update/raw/master/beta/file.zip");
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                Directory.Delete(@"./UpdateFile", true);
+
+            }
+            catch
+            {
+            }
+            try
+            {
+                ZipFile.ExtractToDirectory("./file.zip", "./UpdateFile");
+                Process.Start("Update.exe");
+                ConfigData.Version = UpdateData.Version;
+                CurrentVersion = UpdateData.Version;
+                ConfigData.Name = UpdateData.Name;
+                CurrentName = UpdateData.Name;
+                ConfigJson = JsonConvert.SerializeObject(ConfigData);
+                File.WriteAllText("./Config.json", ConfigJson);
+                UpdateButton.Content = "检测更新";
+                Environment.Exit(0);
+            }
+            catch(Exception ex)
+            {
+                ErrorWindow err = new ErrorWindow(ex);
+                err.Show();
+            }
         }
 
         public void SettingApply(dynamic SettingsData)

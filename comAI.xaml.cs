@@ -95,6 +95,8 @@ namespace DPanel
             Main.ProfileApply();
         }
 
+        string HistoryAI= "";
+
         private async void Button_Click(object sender, RoutedEventArgs e)
         {
             AskButton.IsEnabled = false;
@@ -106,11 +108,22 @@ namespace DPanel
             TextItem1.Text = "我: " + Question;
             AnswerText.Items.Add(TextItem1);
             QuestionText.Text = "";
+            HistoryAI += @"{""role"":""user"",""content"": """ +  Question.Replace("\""," ") + @"""}";
             string Answer=await Task.Run(() =>
             {
-             string  Result = Main.IntelligentAnswer("{\"messages\":[{\"role\":\"user\",\"content\":\" " + Question + "\"}],\"temperature\":0.95,\"top_p\":1.0,\"penalty_score\":2,\"system\":\"你叫乔治，DPanel的AI助手\"}");
+             string  Result = Main.IntelligentAnswer(@"{""messages"":["+HistoryAI+@"],""temperature"":1.00,""top_p"":1.0,""penalty_score"":2,""system"":""你叫乔治，DPanel的AI助手""}");
                 return Result;
             });
+            if(Answer==null || Answer == "")
+            {
+                HistoryAI = "";
+                Answer = "出了点小错，重新问我吧~";
+            }
+            else
+            {
+                HistoryAI +=@",{""role"":""assistant"",""content"": """ + Answer.Replace("\"", " " )+ @"""},";
+            }
+            Console.WriteLine(Question + "   " + Answer + "   " + HistoryAI);
             TextBlock TextItem2 = new TextBlock();
             TextItem2.TextWrapping = TextWrapping.Wrap;
             TextItem2.Text = "乔治: " + Answer;

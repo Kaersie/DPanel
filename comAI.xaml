@@ -36,7 +36,7 @@
             <ListBox x:Name="AnswerText" DockPanel.Dock="Top" Margin="20,20,20.222,0" Height="439" ScrollViewer.VerticalScrollBarVisibility="Visible">
                 <TextBlock/>
             </ListBox>
-            <ProgressBar x:Name="LoadBar" DockPanel.Dock="Bottom" Visibility="Hidden" IsIndeterminate="True" Margin="30,0,30,20" />
+            <ProgressBar x:Name="LoadBar" DockPanel.Dock="Bottom" Visibility="Hidden" IsIndeterminate="True" Margin="20,0,20,20" />
 
             <Button x:Name="AskButton"  DockPanel.Dock="Bottom" Margin="20,0,20,5" Click="Button_Click">提问</Button>
             <TextBox x:Name="QuestionText" Margin="20,20,20.222,0" Height="31" DockPanel.Dock="Bottom" VerticalAlignment="Top" VerticalContentAlignment="Top">Ask me anything</TextBox>

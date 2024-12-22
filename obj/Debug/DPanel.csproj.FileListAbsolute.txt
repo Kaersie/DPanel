@@ -113,3 +113,12 @@ C:\Users\Hisense\Desktop\Backup Files\dpanel-master\obj\Debug\DPanel.exe
 C:\Users\Hisense\Desktop\Backup Files\dpanel-master\obj\Debug\DPanel.pdb
 C:\Users\Hisense\Desktop\Backup Files\dpanel-master\obj\Debug\comBoard.g.cs
 C:\Users\Hisense\Desktop\Backup Files\dpanel-master\obj\Debug\comBoard.baml
+D:\DPanel\DPanel\obj\Debug\comAI.g.cs
+D:\DPanel\DPanel\obj\Debug\comBoard.g.cs
+D:\DPanel\DPanel\obj\Debug\comAI.baml
+D:\DPanel\DPanel\obj\Debug\comBoard.baml
+D:\DPanel\DPanel\bin\Debug\Hardcodet.NotifyIcon.Wpf.dll
+D:\DPanel\DPanel\bin\Debug\Hardcodet.NotifyIcon.Wpf.xml
+D:\DPanel\DPanel\bin\Debug\System.Buffers.dll
+D:\DPanel\DPanel\bin\Debug\System.Buffers.xml
+D:\DPanel\DPanel\bin\Debug\Downloader.dll

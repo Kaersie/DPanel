@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Hisense\Desktop\Backup Files\dpanel-master\obj\Debug\
+D:\DPanel\DPanel\obj\Debug\
 DPanel
 none
 false
 DEBUG;TRACE
-C:\Users\Hisense\Desktop\Backup Files\dpanel-master\App.xaml
+D:\DPanel\DPanel\App.xaml
 51480172419
 
 101647896863
-252120337596
+291509470180
 comAI.xaml;comBoard.xaml;comTime.xaml;ErrorWindow.xaml;MainWindow.xaml;
 
-True
+False
 

@@ -44,7 +44,7 @@ namespace DPanel
         {
             SetWindowPos(new WindowInteropHelper(this).Handle, new IntPtr(HWND_BOTTOM), 0, 0, 0, 0, SWP_NOMOVE | SWP_NOSIZE);
         }
-        private void Window_Loaded(object sender, RoutedEventArgs e)
+        private async void Window_Loaded(object sender, RoutedEventArgs e)
         {
            
             DispatcherTimer BottomTimer = new DispatcherTimer();
@@ -59,24 +59,22 @@ namespace DPanel
             TimeUpdateTimer.Interval = new TimeSpan(100000000);//1s
             TimeUpdateTimer.Tick += new EventHandler(TimeUpdate);
             TimeUpdateTimer.Start();
-            Task task = new Task(() => {
                 TimeSet();
                 WeatherSet();
-            });
-            task.RunSynchronously();
+
             // 获取并设置更新时间&日期
 
-
-            try
-            {
-
-               string a = Main.IntelligentAnswer(@"{""messages"":[{""role"":""user"",""content"":""go""},{""role"":""assistant"",""content"":""春风十里，温暖如你""},{""role"":""user"",""content"":""go""},{""role"":""assistant"",""content"":""晨光熹微，笑靥如花""},{""role"":""user"",""content"":""go""}],""temperature"":0.95,""top_p"":1.0,""penalty_score"":2,""system"":""当用户发送“go”时，回复8字问候语，禁止发送除此8字外内容，不要重复""}");
-                IntelligentText.Text = a;
-            }
-            catch
-            {
-
-            }
+            IntelligentText.Text = await Task.Run(() => {
+                try
+                {
+                    return Main.IntelligentAnswer(@"{""messages"":[{""role"":""user"",""content"":""go""},{""role"":""assistant"",""content"":""春风十里，温暖如你""},{""role"":""user"",""content"":""go""},{""role"":""assistant"",""content"":""晨光熹微，笑靥如花""},{""role"":""user"",""content"":""go""}],""temperature"":0.95,""top_p"":1.0,""penalty_score"":2,""system"":""当用户发送“go”时，回复8字问候语，禁止发送除此8字外内容，不要重复""}");
+            
+                }
+                catch
+                {
+                    return "我们1103";
+                }
+            });
             //获取智慧问候并应用
         }
 
@@ -86,8 +84,6 @@ namespace DPanel
             DateLabel.Content = DateTime.Now.ToString("yyyy/MM/dd");
             string[] WeekDays = { "周日", "周一", "周二", "周三", "周四", "周五", "周六" };
             DayLabel.Content = WeekDays[Convert.ToInt32(DateTime.Now.DayOfWeek)];
-
-
         }
 
         public void TimeUpdate(object sender, EventArgs e)
@@ -95,15 +91,20 @@ namespace DPanel
             Task task = new Task(TimeSet);
             task.RunSynchronously();
 
-
         }
 
-        public void WeatherSet()
+        public async void WeatherSet()
         {
-
-            WeatherData = Main.WeatherGet();
-
-            string WeatherStr = WeatherData.data.tianqi.weather;
+            string WeatherStr="";
+            await Task.Run(() => {
+                try
+                {
+                    WeatherData = Main.WeatherGet();
+                    WeatherStr = WeatherData.data.tianqi.weather;
+                    Console.WriteLine(WeatherStr);
+                }
+                catch { }
+            });
 
             if (WeatherStr == "晴")
             {
