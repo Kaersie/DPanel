@@ -23,10 +23,23 @@ namespace DPanel
         public MainWindow()
         {
             InitializeComponent();
+            ProfilesLoad();
+            UpdateCheck();
+
+            comTime comTime1 = new comTime(this);
+            comTime1.Show();
+            comTime1.Top = ProfileData.Components.comTime.Top;
+            comTime1.Left = ProfileData.Components.comTime.Left;
+
+            comAI comAI1 = new comAI(this);
+            comAI1.Show();
+            comAI1.Top = ProfileData.Components.comAI.Top;
+            comAI1.Left = ProfileData.Components.comAI.Left;
+
         }
         public string WeatherJson;
         public dynamic WeatherData;
-        public string ConfigJson, ProfilePath, ProfileJson, CurrentVersion, CurrentName, UpdateJson;
+        public string ConfigJson, ProfilePath, ProfileJson, CurrentVersion1, CurrentVersion2, CurrentVersion3, CurrentName, UpdateJson;
         public dynamic ConfigData, ProfileData, UpdateData;
         const string API_KEY = "tLGGAI0y4JC91xcL1n9MqysM";
         const string SECRET_KEY = "WgSQbsnSIhhH8QhfR7uQ8AEJRsq1YMPg";//这是卡尔斯厄的apikey，如需编译请替换
@@ -44,12 +57,12 @@ namespace DPanel
             //应用更改
         }
 
-    private async void UpdateButton_Click(object sender, RoutedEventArgs e)
+    private void UpdateButton_Click(object sender, RoutedEventArgs e)
         {
             if (UpdateButton.Content.ToString() == "检测更新")
             {
-                Task task = new Task(UpdateCheck);
-                task.RunSynchronously();
+                
+                UpdateCheck();
             }
             else
             {
@@ -65,25 +78,12 @@ namespace DPanel
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
-        {
-            this.Visibility = Visibility.Hidden;
-
-                ProfilesLoad();
-                UpdateCheck();
-              
-
-
-            comTime comTime1 = new comTime(this);
-            comTime1.Show();
-            comTime1.Top = ProfileData.Components.comTime.Top;
-            comTime1.Left = ProfileData.Components.comTime.Left ;
-
-            comAI comAI1 = new comAI(this);
-            comAI1.Show();
+        {       
 
         }
         private async void UpdateCheck()
         {
+            LoadBar.Visibility = Visibility.Visible;
             await Task.Run(() =>
             {
                 WebClient client = new WebClient();
@@ -94,8 +94,8 @@ namespace DPanel
             });
             UpdateJson = File.ReadAllText("./update.json");
             UpdateData = JsonConvert.DeserializeObject(UpdateJson);
-            VersionLabel.Text = "当前版本：" + CurrentVersion + " " + CurrentName + "   最新版本：" + UpdateData.Version + " " + UpdateData.Name;
-            if (int.Parse(UpdateData.Version.Value) > int.Parse(CurrentVersion))
+            VersionLabel.Text = $"当前版本：{CurrentVersion1}.{CurrentVersion2}.{CurrentVersion3}  {CurrentName} ; 最新版本：{UpdateData.Version1}.{UpdateData.Version2}.{UpdateData.Version3}  {CurrentName}  ";
+            if (int.Parse(UpdateData.Version1.Value) > int.Parse(CurrentVersion1) || int.Parse(UpdateData.Version1.Value) == int.Parse(CurrentVersion1) && int.Parse(UpdateData.Version2.Value) > int.Parse(CurrentVersion2) || int.Parse(UpdateData.Version1.Value) == int.Parse(CurrentVersion1) && int.Parse(UpdateData.Version2.Value) == int.Parse(CurrentVersion2) && int.Parse(UpdateData.Version3.Value) > int.Parse(CurrentVersion3))
             {
                 UpdateButton.Content = "现在更新";
                 UpdateLabel.Text = "检测到新版本";
@@ -103,7 +103,7 @@ namespace DPanel
             }
             MarkdownUpdate();
 
-
+            LoadBar.Visibility = Visibility.Hidden;
         }
         private void ProfilesLoad()
         {
@@ -120,15 +120,31 @@ namespace DPanel
 
         }
 
-        private void ShowButton_Click(object sender, RoutedEventArgs e)
+        private void Show_Click(object sender, RoutedEventArgs e)
         {
             if (this.Visibility==Visibility.Hidden) {
                this.Visibility = Visibility.Visible;
+                Show.Header = "隐藏";
             }
             else
             {
                 this.Visibility = Visibility.Hidden;
+                Show.Header = "显示";
+
             }
+        }
+
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            e.Cancel=true;
+            this.Visibility = Visibility.Hidden;
+            Show.Header = "显示";
+
+        }
+
+        private void Exit_Click(object sender, RoutedEventArgs e)
+        {
+            Environment.Exit(0);
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -150,8 +166,13 @@ namespace DPanel
             {
                 ZipFile.ExtractToDirectory("./file.zip", "./UpdateFile");
                 Process.Start("Update.exe");
-                ConfigData.Version = UpdateData.Version;
-                CurrentVersion = UpdateData.Version;
+                ConfigData.Version1 = UpdateData.Version1;
+                ConfigData.Version2 = UpdateData.Version2;
+                ConfigData.Version3 = UpdateData.Version3;
+                CurrentVersion1 = UpdateData.Version1;
+                CurrentVersion2 = UpdateData.Version1;
+                CurrentVersion2= UpdateData.Version1;
+
                 ConfigData.Name = UpdateData.Name;
                 CurrentName = UpdateData.Name;
                 ConfigJson = JsonConvert.SerializeObject(ConfigData);
@@ -169,7 +190,10 @@ namespace DPanel
         public void SettingApply(dynamic SettingsData)
         {
             AutoStartButton.IsChecked = SettingsData.AutoStart;
-            CurrentVersion = ConfigData.Version;
+            CurrentVersion1 = ConfigData.Version1;
+            CurrentVersion2 = ConfigData.Version2;
+            CurrentVersion3= ConfigData.Version3;
+
             CurrentName = ConfigData.Name;
 
 

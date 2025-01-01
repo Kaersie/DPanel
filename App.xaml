@@ -11,6 +11,21 @@
 
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesign2.Defaults.xaml" />
             </ResourceDictionary.MergedDictionaries>
+            <Style TargetType="Window" x:Key="DPanelWindow">
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="Window">
+                            <Border Background="White" CornerRadius="15" Opacity="0.9" Margin="10">
+                                <ContentPresenter/>
+                                <Border.Effect>
+                                    <DropShadowEffect ShadowDepth="0" BlurRadius="10" Opacity="0.8" Color="#AAAAAA"/>
+                                </Border.Effect>
+                            </Border>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
         </ResourceDictionary>
+        
     </Application.Resources>
 </Application>

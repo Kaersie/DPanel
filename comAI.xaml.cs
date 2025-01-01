@@ -30,37 +30,19 @@ namespace DPanel
         public dynamic WeatherData;
         public dynamic Main;
         public dynamic ProgramHandle;
-        public delegate void SetFormTextDelegate();
-        //【02】创建委托对象
-        private SetFormTextDelegate SetFormText;
-        //【03】委托关联的方法
 
     public comAI(MainWindow MainW)
         {
             InitializeComponent();
             Main = MainW;
-        this.SetFormText = ExcuteMethod;
 
     }
 
-    [DllImport("user32.dll")]
-        public static extern IntPtr SetWindowPos(IntPtr hWnd, IntPtr hWndInsertAfter, int x, int y, int cx, int cy, uint wFlags);
-        const uint SWP_NOMOVE = 0x0002;
-        const uint SWP_NOSIZE = 0x0001;
-        const int HWND_BOTTOM = 1;
-        public void sets(object sender, EventArgs e)
-        {
-            SetWindowPos(new WindowInteropHelper(this).Handle, new IntPtr(HWND_BOTTOM), 0, 0, 0, 0, SWP_NOMOVE | SWP_NOSIZE);
-        }
+   
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-
         }
 
-        private void ExcuteMethod()
-        {
-
-        }
 
 
 
@@ -85,14 +67,15 @@ namespace DPanel
             {
                 IsMoved = false;
                 e.Handled = true;
+                Main.ProfileData.Components.comAI.Top = this.Top;
+                Main.ProfileData.Components.comAI.Left = this.Left;
+                Main.ProfileApply();
             }
         }
 
         private void Window_Closed(object sender, EventArgs e)
         {
-            Main.ProfileData.Components.comTime.Top = this.Top;
-            Main.ProfileData.Components.comTime.Left = this.Left;
-            Main.ProfileApply();
+ 
         }
 
         string HistoryAI= "";
@@ -136,9 +119,6 @@ namespace DPanel
 
         }
 
-        public  void AskAI()
-        {
-    }
 
 
 

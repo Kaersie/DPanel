@@ -12,8 +12,12 @@
         mc:Ignorable="d" 
          TextElement.Foreground="{DynamicResource MaterialDesignBody}"
         Background="#E9EAEC"
-        Title="Main" Height="520" Width="900" Loaded="Window_Loaded" FontFamily="HarmonyOS Sans SC">
-
+        Title="Main" Height="520" Width="900" Loaded="Window_Loaded" FontFamily="HarmonyOS Sans SC" Closing="Window_Closing" Visibility="Hidden">
+    <Window.Resources>
+        <Style TargetType="MenuItem" x:Key="menuitem1" BasedOn="{StaticResource MaterialDesignMenuItem}">
+            <Setter Property="FontFamily" Value="HarmonyOS Sans SC"></Setter>
+        </Style>
+    </Window.Resources>
     <materialDesign:DialogHost x:Name="Dialog">
         <materialDesign:DialogHost.DialogContent>
                 <StackPanel Orientation="Vertical" Margin="20">
@@ -29,8 +33,9 @@
         <DockPanel>
             <tb:TaskbarIcon  ToolTipText="DPanel Fire"  MenuActivation="LeftOrRightClick" >
                 <tb:TaskbarIcon.ContextMenu>
-                    <ContextMenu>
-                        <Button x:Name="ShowButton" Click="ShowButton_Click">显示</Button>
+                    <ContextMenu Style="{StaticResource MaterialDesignContextMenu}">
+                        <MenuItem Style="{StaticResource menuitem1}" x:Name="Show" Header="显示" Click="Show_Click" Icon="{materialDesign:PackIcon Kind=Show}"  />
+                        <MenuItem Style="{StaticResource menuitem1}"  x:Name="Exit" Header="退出" Click="Exit_Click" Icon="{materialDesign:PackIcon Kind=ExitToApp}" />
                     </ContextMenu>
                 </tb:TaskbarIcon.ContextMenu>
 
@@ -124,7 +129,11 @@
                                         <DockPanel>
 
                                             <TextBlock x:Name="VersionLabel" Style="{DynamicResource MaterialDesignBody2TextBlock}" Text="当前版本：0.0.1 Fire   最新版本：0.0.1 Fire" Margin="20,5,0,0"></TextBlock>
-                                            <Button x:Name="UpdateButton" Margin="0,10,20,0" VerticalAlignment="Center" HorizontalAlignment="Right" Width="98" Height="40" Content="检测更新" HorizontalContentAlignment="Center" Click="UpdateButton_Click"></Button>
+
+                                            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Right">
+                                                <ProgressBar x:Name="LoadBar"  IsIndeterminate="True" Style="{DynamicResource MaterialDesignCircularProgressBar}" Visibility="Hidden"  Margin="0,10,10,0" />
+                                                <Button x:Name="UpdateButton" Margin="0,10,20,0"  Width="98" Height="40" Content="检测更新" HorizontalContentAlignment="Center" Click="UpdateButton_Click"></Button>
+                                            </StackPanel>
                                         </DockPanel>
                                     </StackPanel>
                                 </materialDesign:Card>
@@ -187,7 +196,7 @@
                                         <Separator Style="{DynamicResource MaterialDesignSeparator}" />
                                         <StackPanel Orientation="Horizontal">
                                             <TextBlock Style="{DynamicResource MaterialDesignHeadline5TextBlock}" Padding="10,5,0,5"><Run Text="[ \ ] DPanel"/></TextBlock>
-                                            <TextBlock Style="{DynamicResource MaterialDesignBody2TextBlock}" VerticalAlignment="Top" Padding="5,5,0,0"><Run Text="0.0.1 Firely"/></TextBlock>
+                                            <TextBlock Style="{DynamicResource MaterialDesignBody2TextBlock}" VerticalAlignment="Top" Padding="5,5,0,0"><Run Text="0.0.1"/></TextBlock>
                                         </StackPanel>
                                         <TextBlock Style="{DynamicResource MaterialDesignBody1TextBlock}" Padding="10,4" ><Run Text="由 [ \ ] 对角线工作室 维护与更新"/></TextBlock>
                                     </StackPanel>

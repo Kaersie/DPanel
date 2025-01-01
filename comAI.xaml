@@ -12,23 +12,8 @@
         TextOptions.TextFormattingMode="Ideal" 
         TextOptions.TextRenderingMode="Auto" AllowsTransparency="True" BorderBrush="#FFE6D9D9" PreviewMouseLeftButtonDown="Window_PreviewMouseLeftButtonDown"
         PreviewMouseMove="Window_PreviewMouseMove"
-        PreviewMouseLeftButtonUp="Window_PreviewMouseLeftButtonUp" Closed="Window_Closed">
-    <Window.Style>
-        <Style TargetType="Window">
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="Window">
-                        <Border Background="White" CornerRadius="20" Opacity="0.8">
-                            <Border.Effect>
-                                <DropShadowEffect ShadowDepth="0" BlurRadius="10" Opacity="0.8" Color="#AAAAAA"/>
-                            </Border.Effect>
-                            <ContentPresenter/>
-                        </Border>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
-    </Window.Style>
+        PreviewMouseLeftButtonUp="Window_PreviewMouseLeftButtonUp" Closed="Window_Closed"
+        Style="{StaticResource DPanelWindow}">
     <Grid x:Name="grid">
 
 

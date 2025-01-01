@@ -164,14 +164,15 @@ namespace DPanel
             {
                 IsMoved = false;
                 e.Handled = true;
+                Main.ProfileData.Components.comTime.Top = this.Top;
+                Main.ProfileData.Components.comTime.Left = this.Left;
+                Main.ProfileApply();
             }
         }
 
         private void Window_Closed(object sender, EventArgs e)
         {
-            Main.ProfileData.Components.comTime.Top=this.Top;
-            Main.ProfileData.Components.comTime.Left = this.Left;
-            Main.ProfileApply();
+           
         }
     }
 

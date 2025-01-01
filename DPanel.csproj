@@ -36,6 +36,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>DPanel.App</StartupObject>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Downloader, Version=3.1.2.0, Culture=neutral, PublicKeyToken=844973e732f6cdf4, processorArchitecture=MSIL">
       <HintPath>packages\Downloader.3.1.2\lib\net462\Downloader.dll</HintPath>
