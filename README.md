@@ -13,12 +13,11 @@ DPanel 是一款专为大屏环境设计的精美小组件，能够美化和丰�
 
 借助AI的加持，显著提升班级管理与教学效率。
  
-[👏快速上手](快速上手)
-[📌功能](#功能)
+**[👏 快速上手 ](#快速上手)|[📌 功能 ](#功能)|[ 🧤 获取帮助 ](#获取帮助)**
 </div>
  <br>
  
-## 快速上手<a id="快速上手"></a>
+## 快速上手
  
 > [!Warning]
 >
@@ -36,7 +35,7 @@ DPanel 是一款专为大屏环境设计的精美小组件，能够美化和丰�
 | --- | --- | --- |
 | Github | 更新快，但下载速度不稳定 | [Github Releases](https://github.com/Kaersie/DPanel/releases)|
 | KKGithub | Github 镜像| [Github Releases](https://github.com/Kaersie/DPanel/releases)|
-| Gitee | 更新慢，但下载速度快 | [Gitee Releases](https://gitee.com/Kaersie/DPanel/releases)|
+| Gitee | 更新慢，但下载速度快 | [Gitee Releases](https://gitee.com/diagonal-studio/DPanel/releases)|
 
 
 <img src="https://img.shields.io/badge/正式版-敬请期待-red" alt="github">
@@ -64,3 +63,84 @@ AI组件能够让您轻松的获得知识补充。
 
 
 ## 功能
+
+> [!Tip]
+>
+> 如果您对 DPanel 功能有建议或问题，可在 [Github Issue](https://github.com/Kaersie/DPanel/issues) 或 [Gitee Issue](https://gitee.com/diagonal-studio/dpanel/issues) 中提出
+
+
+### 整体
+- [x] 主题色设置
+- [x] 暗黑模式
+- [ ] 开机自启
+- [ ] 课堂安全模式（防止上课弹出错误窗口）
+- [ ] 自定义 AI api keys
+- [ ] 接管桌面
+- [ ] 布局自动调整
+- [ ] 软件自动更新
+- [ ] Q弹的动画
+...
+
+
+### 状态组件
+- [x] 显示时间、日期、天气等基本功能
+- [x] AI生成问候语
+- [ ] 自定义问候语
+- [ ] 显示系统状态与简单设置（音量、网络、亮度....）
+- [ ] 开始菜单
+...
+
+
+### 公告板
+- [x] 通过键入或书写的方式写公告
+- [x] AI润色公告
+- [ ] 支持远程更改
+- [ ] 支持把公告变为赛博标语
+...
+
+
+### AI助手
+- [x] 对话
+- [ ] 复制对话内容
+- [ ] 上次对话内容加载
+...
+
+
+### 工具组件
+- [ ] 显示小工具与应用
+- [ ] 拖拽与删除
+...
+
+## 获取帮助
+- 您可以联系 对角线工作室 成员:
+  - 卡尔斯厄   mail:kaersie@163.com   qq:3614985042
+- 可在 [Github Issue](https://github.com/Kaersie/DPanel/issues) 或 [Gitee Issue](https://gitee.com/diagonal-studio/dpanel/issues) 中提出问题或建议
+
+## 致谢
+
+本项目参考 [Classisland](https://github.com/ClassIsland/ClassIsland) 开发
+
+感谢以下同学参与开发：
+  - 卡尔斯厄(对角线工作室)   [Github](https://github.com/kaersie)   [Bilibili](https://space.bilibili.com/1026296481)
+    
+感谢以下开源项目:
+  - [AvalonEdit](http://www.avalonedit.net/)
+  - [Downloader](https://github.com/bezzad/Downloader)
+  - [HandyOrg](https://github.com/HandyOrg/HandyControl)
+  - [Hardcodet.NotifyIcon.Wpf](https://github.com/hardcodet/wpf-notifyicon)
+  - [MahApps.Metro.IconPacks](https://github.com/MahApps/MahApps.Metro.IconPacks)
+  - [Material Design Colors XAML Resources](https://github.com/MaterialDesignInXAML/MaterialDesignInXamlToolkit)
+  - [Material Design Themes XAML Resources](https://github.com/MaterialDesignInXAML/MaterialDesignInXamlToolkit)
+  - [MdXaml](https://github.com/whistyun/MdXaml)
+  - [Microsoft.Xaml.Behaviors.Wpf](https://github.com/Microsoft/XamlBehaviorsWpf)
+  - [Newtonsoft.Json](https://www.newtonsoft.com/json)
+  - [RestSharp](https://restsharp.dev/)
+  - [System.Buffers](https://github.com/dotnet/maintenance-packages)
+
+## 开源
+
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FKaersie%2FDPanel.svg?type=shield&issueType=license)](https://app.fossa.com/projects/git%2Bgithub.com%2FKaersie%2FDPanel?ref=badge_shield&issueType=license)
+
+DPanel 基于 [MIT](LISENSE) 协议开源
+
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FKaersie%2FDPanel.svg?type=large&issueType=license)](https://app.fossa.com/projects/git%2Bgithub.com%2FKaersie%2FDPanel?ref=badge_large&issueType=license)
