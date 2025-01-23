@@ -1,0 +1,82 @@
+﻿<UserControl
+    x:Class="DPanel.Controls.ConText"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:hc="https://handyorg.github.io/handycontrol"
+    xmlns:icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
+    xmlns:local="clr-namespace:DPanel.Controls"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:md="http://materialdesigninxaml.net/winfx/xaml/themes"
+    d:DesignWidth="1000"
+    FontFamily="HarmonyOS Sans SC"
+    mc:Ignorable="d">
+    <UserControl.Resources>
+        <ControlTemplate x:Key="normal" TargetType="Label">
+            <StackPanel
+                Margin="5,5,10,5"
+                HorizontalAlignment="Right"
+                Orientation="Horizontal">
+                <Button
+                    HorizontalAlignment="Right"
+                    HorizontalContentAlignment="Center"
+                    Click="Button_Click_1"
+                    Style="{DynamicResource MaterialDesignIconForegroundButton}">
+                    <icon:BootstrapIcons Kind="Trash" />
+                </Button>
+            </StackPanel>
+        </ControlTemplate>
+
+        <ControlTemplate x:Key="edit" TargetType="Label">
+            <StackPanel
+                Margin="5,5,20,5"
+                HorizontalAlignment="Right"
+                Orientation="Horizontal">
+                <ProgressBar
+                    x:Name="LoadBar"
+                    Margin="5,0,10,0"
+                    IsIndeterminate="True"
+                    Style="{DynamicResource MaterialDesignCircularProgressBar}"
+                    Visibility="Hidden" />
+
+                <Button
+                    x:Name="AskButton"
+                    HorizontalAlignment="Right"
+                    HorizontalContentAlignment="Center"
+                    Click="AskAI">
+                    <StackPanel Orientation="Horizontal">
+                        <icon:PackIconBootstrapIcons
+                            Margin="0,0,5,0"
+                            VerticalAlignment="Center"
+                            Kind="FiletypeAi" />
+                        <TextBlock VerticalAlignment="Center"><Run Text="润色" /></TextBlock>
+                    </StackPanel>
+                </Button>
+
+                <Button
+                    Margin="10,0,0,0"
+                    HorizontalAlignment="Right"
+                    HorizontalContentAlignment="Center"
+                    Click="FinishEdit">
+                    <TextBlock VerticalAlignment="Center"><Run Text="确定" /></TextBlock>
+                </Button>
+            </StackPanel>
+        </ControlTemplate>
+    </UserControl.Resources>
+    <hc:TransitioningContentControl TransitionMode="Bottom2TopWithFade">
+        <Grid>
+            <Grid Margin="10,0,0,0">
+                <TextBox
+                    x:Name="Text"
+                    Height="80"
+                    FontSize="55"
+                    FontWeight="Medium"
+                    GotFocus="Text_GotFocus" />
+                <Label
+                    x:Name="ControlButton"
+                    HorizontalAlignment="Right"
+                    Template="{DynamicResource edit}" />
+            </Grid>
+        </Grid>
+    </hc:TransitioningContentControl>
+</UserControl>

@@ -1,0 +1,89 @@
+﻿<Window
+    x:Class="DPanel.comTime"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:con="clr-namespace:DPanel.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:hc="https://handyorg.github.io/handycontrol"
+    xmlns:icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
+    xmlns:local="clr-namespace:DPanel"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:md="http://materialdesigninxaml.net/winfx/xaml/themes"
+    Width="1050"
+    Height="95"
+    AllowsTransparency="True"
+    BorderBrush="#FFE6D9D9"
+    Closed="Window_Closed"
+    FontFamily="HarmonyOS Sans SC"
+    Loaded="Window_Loaded"
+    PreviewMouseLeftButtonDown="Window_PreviewMouseLeftButtonDown"
+    PreviewMouseLeftButtonUp="Window_PreviewMouseLeftButtonUp"
+    PreviewMouseMove="Window_PreviewMouseMove"
+    Style="{DynamicResource DPanelWindow}"
+    TextElement.FontSize="13"
+    TextOptions.TextFormattingMode="Ideal"
+    TextOptions.TextRenderingMode="Auto"
+    WindowStyle="None"
+    mc:Ignorable="d">
+    <hc:TransitioningContentControl TransitionMode="Bottom2TopWithFade">
+
+        <Grid x:Name="grid">
+
+            <DockPanel>
+                <StackPanel DockPanel.Dock="Left" Orientation="Horizontal">
+                    <Label
+                        x:Name="TimeLabel"
+                        Margin="15,0,0,0"
+                        Padding="15,5"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Center"
+                        HorizontalContentAlignment="Center"
+                        VerticalContentAlignment="Center"
+                        Content="00:00:00"
+                        FontSize="30" />
+                    <Label
+                        x:Name="DayLabel"
+                        Margin="5,0,0,0"
+                        Padding="15,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Center"
+                        HorizontalContentAlignment="Center"
+                        VerticalContentAlignment="Center"
+                        Content="周六"
+                        FontSize="30" />
+                </StackPanel>
+                <Label
+                    x:Name="DateLabel"
+                    Margin="0,0,15,0"
+                    Padding="15,5"
+                    HorizontalAlignment="Right"
+                    VerticalAlignment="Center"
+                    HorizontalContentAlignment="Center"
+                    VerticalContentAlignment="Center"
+                    Content="2024/11/16"
+                    DockPanel.Dock="Right"
+                    FontSize="30" />
+                <icon:PackIconBootstrapIcons
+                    x:Name="WeatherIcon"
+                    Width="30"
+                    Height="30"
+                    Margin="0,0,10,0"
+                    HorizontalAlignment="Right"
+                    VerticalAlignment="Center"
+                    DockPanel.Dock="Right"
+                    FontSize="30"
+                    Foreground="{DynamicResource ForeColor}"
+                    Kind="Sun" />
+            </DockPanel>
+            <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+                <TextBlock
+                    x:Name="IntelligentText"
+                    VerticalAlignment="Center"
+                    FontSize="35"
+                    Foreground="{DynamicResource ForeColor}" MouseUp="IntelligentText_MouseUp">
+                    我们遥遥领先
+                </TextBlock>
+            </StackPanel>
+        </Grid>
+    </hc:TransitioningContentControl>
+</Window>

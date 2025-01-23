@@ -1,7 +1,14 @@
 ﻿
-FD:\DPanel\DPanel\App.xaml;;
-FD:\DPanel\DPanel\comAI.xaml;;
-FD:\DPanel\DPanel\comBoard.xaml;;
-FD:\DPanel\DPanel\comTime.xaml;;
-FD:\DPanel\DPanel\ErrorWindow.xaml;;
+
+FD:\DPanel\DPanel\Component\comAI.xaml;;
+FD:\DPanel\DPanel\Component\comBoard.xaml;;
+FD:\DPanel\DPanel\Component\comTime.xaml;;
+FD:\DPanel\DPanel\Controls\ConBar.xaml;;
+FD:\DPanel\DPanel\Controls\ConMessage.xaml;;
+FD:\DPanel\DPanel\Controls\ConPaint.xaml;;
+FD:\DPanel\DPanel\Controls\ConSetting.xaml;;
+FD:\DPanel\DPanel\Controls\ConSettingTitle.xaml;;
+FD:\DPanel\DPanel\Controls\ConText.xaml;;
+FD:\DPanel\DPanel\Main\ErrorWindow.xaml;;
+FD:\DPanel\DPanel\Main\SettingWindow.xaml;;
 

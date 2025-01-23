@@ -1,1 +1,1 @@
-{"Settings":{"AutoStart":true},"Components":{"comTime":{"Top":584.0,"Left":150.0},"comAI":{"Top":88.0,"Left":516.0}}}
+{"Settings":{"AutoStart":true,"MainColor":"#FF902B2B","IsDark":false},"Components":{"comTime":{"Top":589.0,"Left":140.0,"Width":1050,"Height":95},"comAI":{"Top":21.0,"Left":998.0,"Width":350,"Height":600},"comBoard":{"Top":83.0,"Left":136.0,"Width":1000,"Height":500}}}

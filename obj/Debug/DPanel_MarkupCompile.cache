@@ -9,12 +9,12 @@ DPanel
 none
 false
 DEBUG;TRACE
-D:\DPanel\DPanel\App.xaml
-51480172419
+D:\DPanel\DPanel\Main\App.xaml
+13-1714672575
 
-9-1804711066
-291509470180
-comAI.xaml;comBoard.xaml;comTime.xaml;ErrorWindow.xaml;MainWindow.xaml;
+161201878404
+341257205125
+Component\comAI.xaml;Component\comBoard.xaml;Component\comTime.xaml;Controls\ConBar.xaml;Controls\ConMessage.xaml;Controls\ConPaint.xaml;Controls\ConSetting.xaml;Controls\ConSettingTitle.xaml;Controls\ConText.xaml;Main\ErrorWindow.xaml;Main\SettingWindow.xaml;Resources\MainDictionaryLight.xaml;Resources\MainDictionaryDark.xaml;
 
 False
 
