@@ -14,46 +14,7 @@
             SecondaryColor="Blue" />
     </ResourceDictionary.MergedDictionaries>
 
-    <Style
-        x:Key="menuitem1"
-        BasedOn="{StaticResource MaterialDesignMenuItem}"
-        TargetType="MenuItem">
-        <Setter Property="FontFamily" Value="HarmonyOS Sans SC" />
-    </Style>
-    <Style
-        x:Key="Sep"
-        BasedOn="{StaticResource MaterialDesignSeparator}"
-        TargetType="Separator">
-        <Setter Property="Margin" Value="8,0,8,0" />
-    </Style>
-    <Style x:Key="DPanelWindow" TargetType="Window">
-        <Setter Property="Template">
-            <Setter.Value>
-                <ControlTemplate TargetType="Window">
-
-                    <Border
-                        Margin="10"
-                        Background="{StaticResource BackgroundBrush}"
-                        CornerRadius="15"
-                        Opacity="0.9">
-                        <hc:Watermark FontSize="30" Mark="DPanel Fire 测试版本禁止发布   ">
-
-                            <ContentPresenter />
-                        </hc:Watermark>
-
-                        <Border.Effect>
-                            <DropShadowEffect
-                                BlurRadius="10"
-                                Opacity="0.8"
-                                ShadowDepth="0"
-                                Color="#AAAAAA" />
-                        </Border.Effect>
-                    </Border>
-                </ControlTemplate>
-            </Setter.Value>
-        </Setter>
-    </Style>
     <SolidColorBrush x:Key="ForeColor" Color="#323232" />
     <SolidColorBrush x:Key="CardBackColor" Color="#ffffff" />
-    <SolidColorBrush x:Key="BackColor" Color="#ffffff" />
+    <SolidColorBrush x:Key="BackColor" Color="#e4e4e4" />
 </ResourceDictionary>

@@ -1,6 +1,6 @@
 ﻿using System.Windows;
 
-namespace DPanel
+namespace ClassPanel
 {
     /// <summary>
     /// App.xaml 的交互逻辑

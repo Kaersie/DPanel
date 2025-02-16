@@ -1,13 +1,70 @@
 ﻿<Application
-    x:Class="DPanel.App"
+    x:Class="ClassPanel.App"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:hc="https://handyorg.github.io/handycontrol"
     StartupUri="SettingWindow.xaml">
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="../Resources/MainDictionaryLight.xaml" />
             </ResourceDictionary.MergedDictionaries>
+            <Style x:Key="ClassPanelWindow" TargetType="Window">
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="Window">
+                            <Border
+                                Margin="10"
+                                Background="{DynamicResource BackColor}"
+                                CornerRadius="15"
+                                Opacity="0.9">
+                                <ContentPresenter />
+                                <Border.Effect>
+                                    <DropShadowEffect
+                                        BlurRadius="8"
+                                        Opacity="0.8"
+                                        ShadowDepth="0"
+                                        Color="#AAAAAA" />
+                                </Border.Effect>
+                            </Border>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+            <Style x:Key="ClassPanelItem" TargetType="UserControl">
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="UserControl">
+                            <Border
+                                Margin="20"
+                                Background="{DynamicResource BackColor}"
+                                CornerRadius="15"
+                                Opacity="0.9">
+                                <ContentPresenter />
+                                <Border.Effect>
+                                    <DropShadowEffect
+                                        BlurRadius="8"
+                                        Opacity="0.8"
+                                        ShadowDepth="0"
+                                        Color="#AAAAAA" />
+                                </Border.Effect>
+                            </Border>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+            <Style
+                x:Key="menuitem1"
+                BasedOn="{StaticResource MaterialDesignMenuItem}"
+                TargetType="MenuItem">
+                <Setter Property="FontFamily" Value="HarmonyOS Sans SC" />
+            </Style>
+            <Style
+                x:Key="Sep"
+                BasedOn="{StaticResource MaterialDesignSeparator}"
+                TargetType="Separator">
+                <Setter Property="Margin" Value="8,0,8,0" />
+            </Style>
         </ResourceDictionary>
     </Application.Resources>
 </Application>

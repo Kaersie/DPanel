@@ -1,7 +1,7 @@
 ﻿using MahApps.Metro.IconPacks;
 using System.Windows.Controls;
 
-namespace DPanel.Controls
+namespace ClassPanel.Controls
 {
     /// <summary>
     /// ConSetting.xaml 的交互逻辑
@@ -15,7 +15,7 @@ namespace DPanel.Controls
 
         public string _subtitle;
         public string _text;
-        public string _link="";
+        public string _link = "";
         public PackIconBootstrapIconsKind _kind;
 
         public string Subtitle
@@ -29,6 +29,7 @@ namespace DPanel.Controls
             get { return _link; }
             set { _link = value; }
         }
+
         public string Text
         {
             get { return _text; }

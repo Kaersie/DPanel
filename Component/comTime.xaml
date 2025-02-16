@@ -1,29 +1,24 @@
-﻿<Window
-    x:Class="DPanel.comTime"
+﻿<UserControl
+    x:Class="ClassPanel.comTime"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:con="clr-namespace:DPanel.Controls"
+    xmlns:con="clr-namespace:ClassPanel.Controls"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:hc="https://handyorg.github.io/handycontrol"
     xmlns:icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
-    xmlns:local="clr-namespace:DPanel"
+    xmlns:local="clr-namespace:ClassPanel"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:md="http://materialdesigninxaml.net/winfx/xaml/themes"
-    Width="1050"
-    Height="95"
-    AllowsTransparency="True"
+    Width="400"
+    Height="200"
     BorderBrush="#FFE6D9D9"
-    Closed="Window_Closed"
     FontFamily="HarmonyOS Sans SC"
     Loaded="Window_Loaded"
-    PreviewMouseLeftButtonDown="Window_PreviewMouseLeftButtonDown"
-    PreviewMouseLeftButtonUp="Window_PreviewMouseLeftButtonUp"
-    PreviewMouseMove="Window_PreviewMouseMove"
-    Style="{DynamicResource DPanelWindow}"
+
+    Style="{DynamicResource ClassPanelItem}"
     TextElement.FontSize="13"
     TextOptions.TextFormattingMode="Ideal"
     TextOptions.TextRenderingMode="Auto"
-    WindowStyle="None"
     mc:Ignorable="d">
     <hc:TransitioningContentControl TransitionMode="Bottom2TopWithFade">
 
@@ -40,7 +35,7 @@
                         HorizontalContentAlignment="Center"
                         VerticalContentAlignment="Center"
                         Content="00:00:00"
-                        FontSize="30" />
+                        FontSize="10" />
                     <Label
                         x:Name="DayLabel"
                         Margin="5,0,0,0"
@@ -50,7 +45,7 @@
                         HorizontalContentAlignment="Center"
                         VerticalContentAlignment="Center"
                         Content="周六"
-                        FontSize="30" />
+                        FontSize="10" />
                 </StackPanel>
                 <Label
                     x:Name="DateLabel"
@@ -62,7 +57,7 @@
                     VerticalContentAlignment="Center"
                     Content="2024/11/16"
                     DockPanel.Dock="Right"
-                    FontSize="30" />
+                    FontSize="10" />
                 <icon:PackIconBootstrapIcons
                     x:Name="WeatherIcon"
                     Width="30"
@@ -71,7 +66,7 @@
                     HorizontalAlignment="Right"
                     VerticalAlignment="Center"
                     DockPanel.Dock="Right"
-                    FontSize="30"
+                    FontSize="10"
                     Foreground="{DynamicResource ForeColor}"
                     Kind="Sun" />
             </DockPanel>
@@ -79,11 +74,12 @@
                 <TextBlock
                     x:Name="IntelligentText"
                     VerticalAlignment="Center"
-                    FontSize="35"
-                    Foreground="{DynamicResource ForeColor}" MouseUp="IntelligentText_MouseUp">
+                    FontSize="10                     "
+                    Foreground="{DynamicResource ForeColor}"
+                    MouseUp="IntelligentText_MouseUp">
                     我们遥遥领先
                 </TextBlock>
             </StackPanel>
         </Grid>
     </hc:TransitioningContentControl>
-</Window>
+</UserControl>

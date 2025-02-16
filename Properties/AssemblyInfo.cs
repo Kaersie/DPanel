@@ -5,11 +5,11 @@ using System.Windows;
 // 有关程序集的一般信息由以下
 // 控制。更改这些特性值可修改
 // 与程序集关联的信息。
-[assembly: AssemblyTitle("DPanel")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("ClassPanel")]
+[assembly: AssemblyDescription("一款适用于班级大屏的桌面组件")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("DPanel")]
+[assembly: AssemblyCompany("对角线工作室")]
+[assembly: AssemblyProduct("ClassPanel")]
 [assembly: AssemblyCopyright("Copyright ©  2024")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

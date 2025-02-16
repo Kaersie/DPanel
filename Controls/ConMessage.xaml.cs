@@ -6,25 +6,26 @@ using System.IO.Compression;
 using System.Windows;
 using System.Windows.Controls;
 
-namespace DPanel.Controls
+namespace ClassPanel.Controls
 {
     /// <summary>
     /// ConMessage.xaml 的交互逻辑
     /// </summary>
     public partial class ConMessage : UserControl
     {
-        public ConMessage(MainMethod main,SettingWindow settingwindow1)
+        public ConMessage(MainMethod main, SettingWindow settingwindow1)
         {
             InitializeComponent();
             Main = main;
             SettingWindow1 = settingwindow1;
         }
+
         public SettingWindow SettingWindow1;
         public MainMethod Main;
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            System.Diagnostics.Process.Start("https://gitee.com/kaersie/dpanel-update/raw/master/beta/file.zip");
+            System.Diagnostics.Process.Start("https://gitee.com/kaersie/ClassPanel-update/raw/master/beta/file.zip");
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)

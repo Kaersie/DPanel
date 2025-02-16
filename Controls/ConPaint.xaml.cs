@@ -2,17 +2,17 @@
 using System.Windows.Controls;
 using System.Windows.Media;
 
-namespace DPanel.Controls
+namespace ClassPanel.Controls
 {
     /// <summary>
     /// ConPaint.xaml 的交互逻辑
     /// </summary>
     public partial class ConPaint : UserControl
     {
-        private comBoard comBoard1;
+        private dynamic comBoard1;
         private dynamic ItemNum;
 
-        public ConPaint(comBoard comboard1, int Num)
+        public ConPaint(dynamic comboard1, int Num)
         {
             InitializeComponent();
             comBoard1 = comboard1;

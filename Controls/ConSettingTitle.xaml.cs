@@ -1,7 +1,7 @@
 ﻿using MahApps.Metro.IconPacks;
 using System.Windows.Controls;
 
-namespace DPanel.Controls
+namespace ClassPanel.Controls
 {
     /// <summary>
     /// ConSettingTitle.xaml 的交互逻辑

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows;
 
-namespace DPanel
+namespace ClassPanel
 {
     /// <summary>
     /// ErrorWindow.xaml 的交互逻辑

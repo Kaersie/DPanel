@@ -1,19 +1,20 @@
-﻿using System;
+﻿using HandyControl.Controls;
+using System;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 
-namespace DPanel.Controls
+namespace ClassPanel.Controls
 {
     /// <summary>
     /// ConText.xaml 的交互逻辑
     /// </summary>
     public partial class ConText : UserControl
     {
-        private comBoard comBoard1;
+        private dynamic comBoard1;
         private dynamic ItemNum;
 
-        public ConText(comBoard comboard1, int Num, bool IsSaved, string SavedString)
+        public ConText(dynamic comboard1, int Num, bool IsSaved, string SavedString)
         {
             InitializeComponent();
             comBoard1 = comboard1;
@@ -54,14 +55,15 @@ namespace DPanel.Controls
             {
                 try
                 {
-                    string x =comBoard1.Main.IntelligentAnswer(@"{""messages"":[{""role"":""user"",""content"":""" + Question + @"""}],""temperature"":0.95,""top_p"":0.5,""penalty_score"":1,""system"":""将用户发送的内容润色并返回，禁止发送除润色后文本以外的任何内容。字数少一点，有文采一点。案例：改变世界去吧    勇敢前行，踏上改变世界的旅程。""}");
+                    string x = comBoard1.Main.IntelligentAnswer(@"{""messages"":[{""role"":""user"",""content"":""" + Question + @"""}],""temperature"":0.95,""top_p"":0.5,""penalty_score"":1,""system"":""将用户发送的内容润色并返回，禁止发送除润色后文本以外的任何内容。字数少一点，有文采一点。案例：改变世界去吧    勇敢前行，踏上改变世界的旅程。""}");
                     Console.WriteLine(x);
-                    if (x.Length > Question.Length * 8)
+                    if (x.Length > Question.Length * 8 || x == "")
                     {
                         return Question;
                     }
                     else
                     {
+                        Growl.SuccessGlobal("生成成功");
                         return x;
                     }
                 }

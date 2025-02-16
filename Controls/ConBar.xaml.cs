@@ -2,7 +2,7 @@
 using System.Windows.Controls;
 using System.Windows.Input;
 
-namespace DPanel.Controls
+namespace ClassPanel.Controls
 {
     /// <summary>
     /// ConBar.xaml 的交互逻辑
@@ -48,5 +48,10 @@ namespace DPanel.Controls
 
         public static readonly DependencyProperty FatherProperty =
             DependencyProperty.Register("Fathers", typeof(object), typeof(DependencyObject), new PropertyMetadata(""));
+
+        private void Border_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            Fathers.Close();
+        }
     }
 }

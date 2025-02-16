@@ -7,11 +7,12 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Interop;
 using System.Windows.Threading;
 
-namespace DPanel
+namespace ClassPanel
 {
     /// <summary>
     ///
@@ -21,7 +22,7 @@ namespace DPanel
     /// 向桌面发送消息
     /// </summary>
 
-    public partial class comTime : Window
+    public partial class comTime : UserControl
     {
         public string WeatherJson;
         public dynamic WeatherData;
@@ -35,25 +36,8 @@ namespace DPanel
             //调用主窗口函数
         }
 
-        [DllImport("user32.dll")]
-        public static extern IntPtr SetWindowPos(IntPtr hWnd, IntPtr hWndInsertAfter, int x, int y, int cx, int cy, uint wFlags);
-
-        private const uint SWP_NOMOVE = 0x0002;
-        private const uint SWP_NOSIZE = 0x0001;
-        private const int HWND_BOTTOM = 1;
-
-        public void sets(object sender, EventArgs e)
-        {
-            SetWindowPos(new WindowInteropHelper(this).Handle, new IntPtr(HWND_BOTTOM), 0, 0, 0, 0, SWP_NOMOVE | SWP_NOSIZE);
-        }
-
         private async void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            DispatcherTimer BottomTimer = new DispatcherTimer();
-            BottomTimer.Interval = new TimeSpan(1);//1s
-            BottomTimer.Tick += new EventHandler(sets);
-            //   BottomTimer.Start();
-
             DispatcherTimer TimeUpdateTimer = new DispatcherTimer();
             TimeUpdateTimer.Interval = new TimeSpan(100000000);//1s
             TimeUpdateTimer.Tick += new EventHandler(TimeUpdate);
@@ -68,10 +52,10 @@ namespace DPanel
                 try
                 {
                     string x = Main.IntelligentAnswer(@"{""messages"":[{""role"":""user"",""content"":""go""},{""role"":""assistant"",""content"":""春风十里，温暖如你""},{""role"":""user"",""content"":""go""},{""role"":""assistant"",""content"":""晨光熹微，笑靥如花""},{""role"":""user"",""content"":""go""}],""temperature"":0.95,""top_p"":0.7,""penalty_score"":1,""system"":""当用户发送“go”时，回复8字名言，禁止发送除此8字外内容，有文采一点，不要重复""}");
-                    if (x.Length >= 20)
+                    if (x.Length >= 20 || x == "")
                     {
                         x = Main.IntelligentAnswer(@"{""messages"":[{""role"":""user"",""content"":""go""},{""role"":""assistant"",""content"":""春风十里，温暖如你""},{""role"":""user"",""content"":""go""},{""role"":""assistant"",""content"":""晨光熹微，笑靥如花""},{""role"":""user"",""content"":""go""}],""temperature"":0.95,""top_p"":0.7,""penalty_score"":1,""system"":""当用户发送“go”时，回复8字名言，禁止发送除此8字外内容，有文采一点，不要重复""}");
-                        if (x.Length >= 20)
+                        if (x.Length >= 20 || x == "")
                         {
                             return "轻舟已过万重山";
                         }
@@ -137,7 +121,7 @@ namespace DPanel
             {
                 try
                 {
-                    WeatherData =WeatherGet();
+                    WeatherData = WeatherGet();
                     WeatherStr = WeatherData.data.tianqi.weather;
                     Console.WriteLine(WeatherStr);
                 }
@@ -183,29 +167,6 @@ namespace DPanel
 
         private bool IsMoved = false;
 
-        private void Window_PreviewMouseLeftButtonDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
-        {
-            StartPosition = e.GetPosition(this);
-        }
-
-        private void Window_PreviewMouseMove(object sender, System.Windows.Input.MouseEventArgs e)
-        {
-            if (Mouse.LeftButton == MouseButtonState.Pressed && StartPosition != e.GetPosition(this))
-            {
-                IsMoved = true;
-                DragMove();
-            }
-        }
-
-        private void Window_PreviewMouseLeftButtonUp(object sender, MouseButtonEventArgs e)
-        {
-            if (IsMoved)
-            {
-                IsMoved = false;
-                e.Handled = true;
-            }
-        }
-
         private void Window_Closed(object sender, EventArgs e)
         {
         }
@@ -217,10 +178,10 @@ namespace DPanel
                 try
                 {
                     string x = Main.IntelligentAnswer(@"{""messages"":[{""role"":""user"",""content"":""go""},{""role"":""assistant"",""content"":""春风十里，温暖如你""},{""role"":""user"",""content"":""go""},{""role"":""assistant"",""content"":""晨光熹微，笑靥如花""},{""role"":""user"",""content"":""go""}],""temperature"":0.95,""top_p"":0.7,""penalty_score"":1,""system"":""当用户发送“go”时，回复8字名言，禁止发送除此8字外内容，有文采一点，不要重复""}");
-                    if (x.Length >= 20)
+                    if (x.Length >= 20 || x == "")
                     {
                         x = Main.IntelligentAnswer(@"{""messages"":[{""role"":""user"",""content"":""go""},{""role"":""assistant"",""content"":""春风十里，温暖如你""},{""role"":""user"",""content"":""go""},{""role"":""assistant"",""content"":""晨光熹微，笑靥如花""},{""role"":""user"",""content"":""go""}],""temperature"":0.95,""top_p"":0.7,""penalty_score"":1,""system"":""当用户发送“go”时，回复8字名言，禁止发送除此8字外内容，有文采一点，不要重复""}");
-                        if (x.Length >= 20)
+                        if (x.Length >= 20 || x == "")
                         {
                             return "轻舟已过万重山";
                         }
